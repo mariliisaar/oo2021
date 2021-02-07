@@ -8,16 +8,13 @@ public class Kodutoo {
         double c = Double.NaN;
 
         System.out.println("Sisesta esimese kaateti pikkus");
-        String aIn = userIn.nextLine();
-        a = makeDouble(aIn);
+        a = makeDouble(userIn.nextLine());
 
         System.out.println("Sisesta teise kaateti pikkus");
-        String bIn = userIn.nextLine();
-        b = makeDouble(bIn);
+        b = makeDouble(userIn.nextLine());
 
         System.out.println("Sisesta kolmanda kaateti pikkus");
-        String cIn = userIn.nextLine();
-        c = makeDouble(cIn);
+        c = makeDouble(userIn.nextLine());
 
         if (a + b > c && a + c > b && b + c > a) {
             System.out.println("Tegemist on kolmnurgaga");
