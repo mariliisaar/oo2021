@@ -1,0 +1,12 @@
+Kahendsüsteem
+
+* Teata, kas sisestatud neljakohaline arv koosneb vaid ühtedest ja nullidest.
+* Kui tingimus on tõene, väljasta selle kahendsüsteemi arvu väärtus kümnendsüsteemis.
+* Võrreldes eelmisega võib sisestatud kahendsüsteemi arv olla kuni kümnekohaline. Eraldi kuvatase välja, millisele väärtusele iga "üks" selles arvus vastab. 
+
+Kui aega üle peaks jääma, siis ka:
+Harmooniline keskmine
+
+* Koosta funktsioon, mille sisendiks on kahe kilomeetripikkuse lõigu läbimise kiirused (km/h), väljundiks nende kahe kilomeetri läbimise keskmine kiirus.
+* Funktsioonile antakse ette kilomeetripikkuste lõikude läbimiste keskmised kiirused kogumina (km/h). Väljasta kogu selle tee läbimise keskmine kiirus.
+* Kilomeetriste lõikude läbimiste keskmised kiirused loetakse sisse veebiaadressilt, kogu teekonna läbimise keskmine kiirus salvestatakse faili.
