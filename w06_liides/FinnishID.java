@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.time.Period;
+
 public class FinnishID implements PersonalCodeBehaviour{
     private String code;
 
@@ -19,7 +22,6 @@ public class FinnishID implements PersonalCodeBehaviour{
             year = "18" + year;
         } else if (century.equals("-")) {
             year = "19" + year;
-            System.out.println("1900!");
         } else if (century.equals("A")) {
             year = "20" + year;
         }
@@ -29,26 +31,32 @@ public class FinnishID implements PersonalCodeBehaviour{
 
     @Override
     public int getMonth() {
-        // TODO Auto-generated method stub
-        return 0;
+        return Integer.parseInt(code.substring(2, 4));
     }
 
     @Override
     public int getDay() {
-        // TODO Auto-generated method stub
-        return 0;
+        return Integer.parseInt(code.substring(0, 2));
     }
 
     @Override
     public String getDOB() {
-        // TODO Auto-generated method stub
-        return null;
+        String month = Integer.toString(getMonth());
+
+        if (month.length() < 2) {
+            month = "0" + month;
+        }
+
+        String dob = getDay() + "-" + month + "-" + getFullYear();
+        return dob;
     }
 
     @Override
     public String getAge() {
-        // TODO Auto-generated method stub
-        return null;
+        LocalDate date = LocalDate.of(getFullYear(), getMonth(), getDay());
+        LocalDate now = LocalDate.now();
+        String age = Integer.toString(Period.between(date, now).getYears());
+        return age;
     }
     
 }
