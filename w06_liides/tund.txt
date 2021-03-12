@@ -1,0 +1,3 @@
+1. Luua Animal tüüpi interface, tal oleks speak, eat, sleep, beSneaky, lookAround, attack, defend funktsioonid/meetodid ja siis vähemalt 2 loomatüüpi klassi, kes implementeerivad Animal interface-i ja neil oleks oma meetodite sisu ehk nad peaksid midagi tegema
+2. Täiendada PersonalCodeBehaviour veel meetoditega nt getMonth, getDay, untilNextBirthday (vabatahtlik), getAge ja vähemalt 2 klassi, mis implemnteerivad seda liidest nt EstonianID (enda isikukood nt) klass ja FinnishID (230181-237J) (info: koodi kirjeldus) klass ja vaja töötavaid meetodeid.
+3. Oleks mingisugune Main klass main meetodiga, kus lood erinevaid objekte loomade ja Estonian/FinnishID klassidest ja kutsub välja neid meetodeid ehk rakendus
