@@ -1,0 +1,12 @@
+@AutoWired - ?? Autowiring feature of spring framework enables you to inject the object dependency implicitly. It internally uses setter or constructor injection.
+@Controller - Näitab, et tegemist on controlleriga (n-ö äriloogika pool). Meie näidetes määrasime controlleris põhiliselt, millist view'd kasutajale näidatakse
+@Repository - Näitab, et tegemist on repositooriumiga (umbes nagu andmebaas - andmeid hoitakse, vaadatakse ja otsitakse)
+@GetMapping - Määrab, mis juhtub GET requesti ajal (nt lehe avamine)
+@PostMapping - Määrab, mis juhtub POST requesti ajal (nt vormi saatmine)
+@RequestParam - saab requestist parameetrid ja saadab need mudelile (nt Hello World nime vahetamine ?who=SisestatudNimi)
+@PathVariable - muutuja, mis seotakse veebiaadressiga (nt kustutamiseks v muutmiseks)
+@Valid - kontrollib, et muutuja oleks olemas (nt muutmisel, et muudetav eksisteeriks)
+DAO - Data Access Object; Klass, mis vastutab selle eest, kuidas view suhtleb andmebaasiga (CRUD tegevused) - kuhu controller käsud edasi saadab
+JPA - Java Persistence API; Sild MVC mudeli ja andmebaasi relatsiooniliste mudelite vahel. Ei pea SQLi kirjutama, nt @Entity, @Id, @GeneratedValue
+CRUD - Create, Read, Update, Delete; Toimingud, mida saab andmetega andmebaasis teha.
+H2 - in-memory database, kus me oma andmeid hoidsime

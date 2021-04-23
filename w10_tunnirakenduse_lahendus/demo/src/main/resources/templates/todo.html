@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <div th:switch="${tasks.size()}">
+        <h2 th:case="0">No obligations :D</h2>
+        <div th:case="*">
+            <div th:if="${not tasks.?[!completed].isEmpty()}">
+                <h2>Tasks to Complete:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Description</th>
+                            <th>Deadline</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="task : ${tasks}" th:if="${!task.getCompleted()}">
+                            <td th:text="${task.title}"></td>
+                            <td th:text="${task.description}"></td>
+                            <td th:text="${task.deadline}"></td>
+                            <td><a th:href="@{/edittask/{id}(id=${task.id})}">Edit</a></td>
+                            <td><a th:href="@{/deletetask/{id}(id=${task.id})}">Delete</a></td>
+                            <td><a th:href="@{/completetask/{id}(id=${task.id})}">Mark as Completed</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${not tasks.?[completed].isEmpty()}">
+                <h2>Completed Tasks:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Description</th>
+                            <th>Delete</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="task : ${tasks}" th:if="${task.getCompleted()}">
+                            <td th:text="${task.title}"></td>
+                            <td th:text="${task.description}"></td>
+                            <td><a th:href="@{/deletetask/{id}(id=${task.id})}">Delete</a></td>
+                            <td><a th:href="@{/completetask/{id}(id=${task.id})}">Mark as Incomplete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <p><a href="/addtask">Add a new task</a></p>
+    <hr>
+    <p><a href="/index">User Management</a></p>
+</body>
+</html>
