@@ -9,6 +9,10 @@ public class Word implements Letter {
         this.word = word;
     }
 
+    public String getWord() {
+        return this.word;
+    }
+
     @Override
     public int getFrequency(Character c) {
         int counter = 0;
