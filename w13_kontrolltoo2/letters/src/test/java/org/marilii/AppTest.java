@@ -23,18 +23,21 @@ public class AppTest
     // Test sentence
     @Test
     public void sentenceEquals() {
-        Sentence sentence = new Sentence("Kass tahab õue");
+        Sentence sentence = new Sentence("Kass tahab õue, aga ei saa");
         List<String> words = new ArrayList<>();
-        words.add("Kass");
+        words.add("kass");
         words.add("tahab");
         words.add("õue");
+        words.add("aga");
+        words.add("ei");
+        words.add("saa");
         List<String> actual = new ArrayList<>();
         for(Word w : sentence.getWords()) {
             actual.add(w.getWord());
         }
         assertEquals(words, actual);
-        assertEquals(3, sentence.getWordCount());
-        assertEquals("Kass tahab õue", sentence.getSentence());
+        assertEquals(6, sentence.getWordCount());
+        assertEquals("Kass tahab õue, aga ei saa", sentence.getSentence());
         assertEquals("tahab", sentence.getWordAt(1).getWord());
     }
 
