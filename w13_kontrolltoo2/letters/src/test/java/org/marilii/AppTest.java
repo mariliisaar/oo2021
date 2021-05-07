@@ -2,6 +2,9 @@ package org.marilii;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,5 +51,22 @@ public class AppTest
         assertEquals(0, sentence.getFrequency('i'));
         assertEquals(1, sentence.getFrequency('e'));
         assertEquals(3, sentence.getFrequency('a'));
+    }
+
+    // Test comparing with file
+    @Test
+    public void sentenceFile() throws IOException{
+        Sentence sentence = new Sentence("Kass tahab õue");
+        File file = new File("src/main/resources/test.txt");
+        List<String> str = new ArrayList<>();
+        List<String> ext = new ArrayList<>();
+        str.add("õue");
+        ext.add("kass");
+        ext.add("tahab");
+        PrintWriter pw = new PrintWriter(file);
+        pw.println("kass;tahab;puu;otsa;aga;ei;saa");
+        pw.close();
+        assertEquals(str, sentence.checkFile(file).get(0));
+        assertEquals(ext, sentence.checkFile(file).get(1));
     }
 }
