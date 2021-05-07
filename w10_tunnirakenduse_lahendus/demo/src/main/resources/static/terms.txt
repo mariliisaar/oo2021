@@ -5,7 +5,7 @@
 @PostMapping - Määrab, mis juhtub POST requesti ajal (nt vormi saatmine)
 @RequestParam - saab requestist parameetrid ja saadab need mudelile (nt Hello World nime vahetamine ?who=SisestatudNimi)
 @PathVariable - muutuja, mis seotakse veebiaadressiga (nt kustutamiseks v muutmiseks)
-@Valid - kontrollib, et muutuja oleks olemas (nt muutmisel, et muudetav eksisteeriks)
+@Valid - kas vajab valideerimist ja kui jah, siis kas on valid
 DAO - Data Access Object; Klass, mis vastutab selle eest, kuidas view suhtleb andmebaasiga (CRUD tegevused) - kuhu controller käsud edasi saadab
 JPA - Java Persistence API; Sild MVC mudeli ja andmebaasi relatsiooniliste mudelite vahel. Ei pea SQLi kirjutama, nt @Entity, @Id, @GeneratedValue
 CRUD - Create, Read, Update, Delete; Toimingud, mida saab andmetega andmebaasis teha.

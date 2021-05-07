@@ -1,5 +1,9 @@
 package org.marilii;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,6 +36,35 @@ public class Sentence implements Letter {
 
     public int getWordCount() {
         return this.words.size();
+    }
+
+    public List<List<String>> checkFile(File file) throws IOException {
+        FileReader fr = new FileReader(file);
+        BufferedReader br = new BufferedReader(fr);
+        List<String> existingWords = new ArrayList<>();
+        List<String> newWords = new ArrayList<>();
+        for(Word w : this.getWords()) {
+            newWords.add(w.getWord());
+        }
+        String line = br.readLine();
+        while(line != null) {
+            String[] lineData = line.split(";");
+            for(int i = 0; i < newWords.size(); i++) {
+                if (Arrays.asList(lineData).contains(newWords.get(i))) {
+                    existingWords.add(newWords.get(i));
+                }
+            }
+            for (String extWord : existingWords) {
+                newWords.removeIf(w -> w.equals(extWord));
+            }
+            line = br.readLine();
+        }
+        fr.close();
+        br.close();
+        List<List<String>> lists = new ArrayList<List<String>>();
+        lists.add(newWords);
+        lists.add(existingWords);
+        return lists;
     }
 
     @Override
