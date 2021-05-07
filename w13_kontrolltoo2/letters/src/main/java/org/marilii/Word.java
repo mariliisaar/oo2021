@@ -1,7 +1,5 @@
 package org.marilii;
 
-import org.Letter;
-
 public class Word implements Letter {
     private String word;
 

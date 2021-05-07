@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.Letter;
-
 public class Sentence implements Letter {
     private List<Word> words = new ArrayList<>();
 
