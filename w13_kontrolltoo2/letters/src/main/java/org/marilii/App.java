@@ -11,7 +11,7 @@ public class App
     public static void main( String[] args ) throws IOException
     {
         // Lause analüüs - mitu korda esineb täht lauses ja selles sisalduvates sõnades
-        Sentence s = new Sentence("Kass tahab puu otsa, aga ei saa.");
+        Sentence s = new Sentence("Lammas all paremal nurgas.");
         System.out.println("Lauses \"" + s.getSentence() + "\" on kokku " + s.getFrequency('a') + " \"a\" tähte.");
         System.out.println("Sõnade haaval on \"a\" tähtede hulk järgmine: ");
         for(int i = 0; i < s.getWordCount(); i++) {
